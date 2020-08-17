@@ -8,7 +8,7 @@ console.log('line 8');
 
 $(document).ready( function() {
     
-    $('#form-id').on('submit', function () {
+    $('#userInput').on('submit', function () {
         
         cuisine = $('#cuisine').val();
         rad = $('#radius').val();

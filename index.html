@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,26 +37,24 @@
         <!--Row for the text input boxes-->
         <div class="row">
             <!--Column for entire form-->
-            <form class="col s12">
+            <form class="col s12" id="userInput">
                 <!--Row for type of cuisine input-->
                 <div class="row">
                     <div class="input-field col s6">
                         <input placeholder="Cuisine" id="cuisine" type="text" class="validate">
                         <label for="cuisine" class="active">What kind of food would you like?</label>
-                      </div>
+                    </div>
                 </div>
                 <!--Row for radius input-->
                 <div class="row">
                     <div class="input-field col s6">
                         <input placeholder="Radius (in meters)" id="radius" type="text" class="validate">
                         <label for="radius" class="active">How far are you willing to go?</label>
-                      </div>
+                    </div>
                 </div>
-
+                <button type="submit" style="display:none"></button>
             </form>
         </div>
-    </div>
-
     </div>
 </body>
 

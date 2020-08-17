@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>Random Lunch Generator</title>
+</head>
+
+<body>
+    <!--Navbar at the top of the page-->
+    <nav>
+        <!--Color changed to a light blue-->
+        <div class="nav-wrapper blue lighten-2">
+            <!--Cenetered title that links back to the starting page-->
+            <a href="index.html" class="brand-logo center">Random Lunch Generator</a>
+            <!--List to throw in another other possible links at the top-->
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <!--Will update link to about.html when we create the page-->
+                <li><a href="#">About Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--Container for the page content-->
+    <div class="container">
+        <!--Row for the header-->
+        <div class="row">
+            <!--Column for the header-->
+            <div class="col s12">
+                <!--h1 containing the header, also blue-->
+                <h1 class="header center-align blue-text">What Are You in the Mood for?</h1>
+            </div>
+        </div>
+        <!--Row for the text input boxes-->
+        <div class="row">
+            <!--Column for entire form-->
+            <form class="col s12">
+                <!--Row for type of cuisine input-->
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input placeholder="Cuisine" id="cuisine" type="text" class="validate">
+                        <label for="cuisine" class="active">What kind of food would you like?</label>
+                      </div>
+                </div>
+                <!--Row for radius input-->
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input placeholder="Radius (in meters)" id="radius" type="text" class="validate">
+                        <label for="radius" class="active">How far are you willing to go?</label>
+                      </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    </div>
+</body>
+
+</html>

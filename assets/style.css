@@ -9,3 +9,7 @@
   color:red;
   animation: ease-in 1s;
 }
+
+.collection-item {
+padding: 2px !important;
+}

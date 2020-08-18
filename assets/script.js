@@ -1,4 +1,5 @@
 var count, lat, lon, rad, cuisine, userLat, userLon;
+var restaurantData = [];
 var cuisineIds = {
     "African": 152,
     "American": 1,
@@ -105,9 +106,13 @@ function getPosSuccess(pos) {
 
     //find the ID of the cuisine input by the user
     inputCuisine = $('#cuisine').val();
+    //I used array syntax below because this hated .syntax for unknown reason
     cuisine = cuisineIds[inputCuisine];
 
+    //get user radius input
     rad = $('#radius').val();
+
+    //setup API request
     var queryURL = 'https://developers.zomato.com/api/v2.1/search?apikey=' + apiKey +
         '&count=' + count + '&lat=' + userLat + '&lon=' + userLon + '&radius=' + rad + '&cuisines=' + cuisine;
 
@@ -115,12 +120,23 @@ function getPosSuccess(pos) {
         url: queryURL,
         method: 'GET'
     }).then(function (response) {
-        console.log(response);
+        console.log(response); //debug log for response
+        $.each(response.restaurants, function (index) {
+            //create new object with data to input to google maps API
+            var restaurant = {
+                name: response.restaurants[index].restaurant.name,
+                lat: response.restaurants[index].restaurant.location.latitude,
+                lon: response.restaurants[index].restaurant.location.longitude
+            };
+            restaurantData.push(restaurant);
+        });
+        console.log(restaurantData); //debug log for array of restaurant objects
     });
 };
 
 $(document).ready(function () {
 
+    //autocomplete for cuisine input field
     $('input.autocomplete').autocomplete({
         data: {
             "African": null,
@@ -220,12 +236,13 @@ $(document).ready(function () {
         }, limit: 3
     });
 
+    //When the user submits their request...
     $('#userInput').on('submit', function () {
 
         event.preventDefault();
 
+        //get current position of user
         if (navigator.geolocation) {
-            //get current position of user
             navigator.geolocation.getCurrentPosition(getPosSuccess);
         };
 

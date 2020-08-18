@@ -1,13 +1,122 @@
-var count, lat, lon, rad, cuisine;
+var count, lat, lon, rad, cuisine, userLat, userLon;
+var cuisineIds = {
+    "African": 152,
+    "American": 1,
+    "Argentine": 151,
+    "Armenian": 175,
+    "Asian": 3,
+    "BBQ": 193,
+    "Bagels": 955,
+    "Bakery": 5,
+    "Bar Food": 227,
+    "Beverages": 270,
+    "Brazilian": 159,
+    "Breakfast": 182,
+    "British": 133,
+    "Bubble Tea": 247,
+    "Burger": 168,
+    "Cafe": 30,
+    "Cajun": 491,
+    "California": 956,
+    "Caribbean": 158,
+    "Chinese": 25,
+    "Coffee and Tea": 161,
+    "Colombian": 287,
+    "Crepes": 881,
+    "Cuban": 153,
+    "Deli": 192,
+    "Desserts": 100,
+    "Dim Sum": 411,
+    "Diner": 541,
+    "Dominican": 958,
+    "Donuts": 959,
+    "Drinks Only": 268,
+    "Eastern European": 651,
+    "Ethiopian": 149,
+    "European": 38,
+    "Fast Food": 40,
+    "Floribbean": 960,
+    "Fondue": 318,
+    "French": 45,
+    "Frozen Yogurt": 501,
+    "Fusion": 274,
+    "German": 134,
+    "Greek": 156,
+    "Grill": 181,
+    "Hawaiian": 521,
+    "Healthy Food": 143,
+    "Ice Cream": 233,
+    "Indian": 148,
+    "International": 154,
+    "Irish": 135,
+    "Italian": 55,
+    "Jamaican": 207,
+    "Japanese": 60,
+    "Juices": 164,
+    "Kebab": 178,
+    "Korean": 67,
+    "Laotian": 901,
+    "Latin American": 136,
+    "Lebanese": 66,
+    "Mediterranean": 70,
+    "Mexican": 73,
+    "Middle Eastern": 137,
+    "Mongolian": 74,
+    "Moroccan": 147,
+    "Nepalese": 117,
+    "New American": 996,
+    "Pakistani": 139,
+    "Patisserie": 183,
+    "Peruvian": 162,
+    "Pizza": 82,
+    "Polish": 219,
+    "Pub Food": 983,
+    "Ramen": 320,
+    "Russian": 84,
+    "Salad": 998,
+    "Salvadorean": 601,
+    "Sandwich": 304,
+    "Seafood": 83,
+    "Soul Food": 461,
+    "Southern": 471,
+    "Southwestern": 966,
+    "Spanish": 89,
+    "Steak": 141,
+    "Sushi": 177,
+    "Swedish": 211,
+    "Taco": 997,
+    "Taiwanese": 190,
+    "Tapas": 179,
+    "Tea": 163,
+    "Teriyaki": 964,
+    "Tex-Mex": 150,
+    "Thai": 95,
+    "Turkish": 142,
+    "Vegetarian": 308,
+    "Vietnamese": 99
+};
 apiKey = '6ebe4f4724f4745f9cf521042143f3f6';
 count = 10; //placeholder value
-lat = 35.1793829; //placeholder value
-lon = -80.7611376; //placeholder value
 
 //successful getCurrentPosition function call
 function getPosSuccess(pos) {
-    lat = pos.coords.latitude;
-    lon = pos.coords.longitude;
+    userLat = pos.coords.latitude;
+    userLon = pos.coords.longitude;
+
+    //find the ID of the cuisine input by the user
+    inputCuisine = $('#cuisine').val();
+    cuisine = cuisineIds[inputCuisine];
+
+    rad = $('#radius').val();
+    var queryURL = 'https://developers.zomato.com/api/v2.1/search?apikey=' + apiKey +
+        '&count=' + count + '&lat=' + userLat + '&lon=' + userLon + '&radius=' + rad + '&cuisines=' + cuisine;
+
+    $.ajax({
+        url: queryURL,
+        method: 'GET'
+    }).then(function (response) {
+        console.log(response);
+    });
 };
 
 $(document).ready(function () {
@@ -113,21 +222,12 @@ $(document).ready(function () {
 
     $('#userInput').on('submit', function () {
 
-        //get current position of user
-        navigator.geolocation.getCurrentPosition(getPosSuccess);
-
-        cuisine = $('#cuisine').val();
-        rad = $('#radius').val();
-        var queryURL = 'https://developers.zomato.com/api/v2.1/search?apikey=' + apiKey + '&count=' + count + '&lat=' + lat + '&lon=' + lon + '&radius=' + rad + '&cuisines=' + cuisine;
-        console.log(queryURL);
-
         event.preventDefault();
 
-        $.ajax({
-            url: queryURL,
-            method: 'GET'
-        }).then(function (response) {
-            console.log(response);
-        });
+        if (navigator.geolocation) {
+            //get current position of user
+            navigator.geolocation.getCurrentPosition(getPosSuccess);
+        };
+
     });
 });

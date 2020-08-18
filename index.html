@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Link to Materialize CSS-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Link to local CSS-->
     <link rel="stylesheet" href="./assets/style.css">
     <title>Random Lunch Generator</title>
@@ -45,13 +46,15 @@
                     <div class="input-field col s12">
                         <input placeholder="Cuisine" id="cuisine" type="text" class="validate autocomplete">
                         <label for="cuisine" class="active">What kind of food would you like?</label>
+                        <p for="cuisine" class="active"style="display: none" id="check1">Please enter a valid choice</p>
                     </div>
                 </div>
                 <!--Row for radius input-->
                 <div class="row">
                     <div class="input-field col s12">
-                        <input placeholder="Radius (in meters)" id="radius" type="text" class="validate">
+                        <input placeholder="Radius (in miles)" id="radius" type="text" class="validate">
                         <label for="radius" class="active">How far are you willing to go?</label>
+                        <p for="cuisine" class="active"style="display: none" id="check2">Please enter a number</p>
                     </div>
                 </div>
                 <!--Invisible submit button for form-->

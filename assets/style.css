@@ -4,3 +4,8 @@
     width: 100%;
     position: relative;
 }
+
+#check1, #check2 {
+  color:red;
+  animation: ease-in 1s;
+}

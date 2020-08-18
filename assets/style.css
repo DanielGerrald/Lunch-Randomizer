@@ -1,4 +1,6 @@
+/*Display and centering of the map from Google Maps API*/
 #map {
-    height: 400px;
-    width: 400px;
-  }
+    height: 600px;
+    width: 100%;
+    position: relative;
+}

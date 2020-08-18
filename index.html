@@ -13,7 +13,7 @@
     <!--Navbar at the top of the page-->
     <nav>
         <!--Color changed to a light blue-->
-        <div class="nav-wrapper blue lighten-2">
+        <div class="nav-wrapper blue lighten-2" id="navBar">
             <!--Cenetered title that links back to the starting page-->
             <a href="index.html" class="brand-logo center">Random Lunch Generator</a>
             <!--List to throw in another other possible links at the top-->
@@ -31,29 +31,32 @@
             <!--Column for the header-->
             <div class="col s12">
                 <!--h1 containing the header, also blue-->
-                <h1 class="header center-align blue-text">What Are You in the Mood for?</h1>
+                <h1 class="header center-align blue-text" id="topTitle">What Are You in the Mood for?</h1>
             </div>
         </div>
         <!--Row for the text input boxes-->
         <div class="row" id="results">
             <!--Column for entire form-->
-            <form class="col s12" id="userInput">
+            <form class="col s6" id="userInput">
                 <!--Row for type of cuisine input-->
                 <div class="row">
-                    <div class="input-field col s6">
+                    <div class="input-field col s12">
                         <input placeholder="Cuisine" id="cuisine" type="text" class="validate autocomplete">
                         <label for="cuisine" class="active">What kind of food would you like?</label>
                     </div>
                 </div>
                 <!--Row for radius input-->
                 <div class="row">
-                    <div class="input-field col s6">
+                    <div class="input-field col s12">
                         <input placeholder="Radius (in meters)" id="radius" type="text" class="validate">
                         <label for="radius" class="active">How far are you willing to go?</label>
                     </div>
                 </div>
                 <button type="submit" style="display:none" id="submitButton"></button>
             </form>
+            <div class="col s6" id="randomizer">
+                <!--Block for the randomizer visualizaiton to live in-->
+            </div>
         </div>
         <div class="row center">
           <div id="map" style="display:none"></div>

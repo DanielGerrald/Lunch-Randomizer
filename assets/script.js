@@ -200,6 +200,8 @@ $('input.autocomplete').autocomplete({
 
 $('#userInput').on('submit', function () {
     event.preventDefault();
+    restaurantData = [];
+
     // Make sure browser supports this feature
     if (navigator.geolocation) {
         // Provide our showPosition() function to getCurrentPosition
@@ -245,21 +247,24 @@ function zomatoCall(lat, lon) {
         url: queryURL,
         method: 'GET'
     }).then(function (response) {
-        //$("#results").html("").attr("class", "row center");
+        $("#randomizer").html("");
+        $("#winner").html("");
+        
         var rand = Math.floor(Math.random() * 10);
         var res = response.restaurants[rand].restaurant;
         var newLat = res.location.latitude;
         var newLon = res.location.longitude;
-        var resName = $("<h3>").text(res.name);
+        var resName = $("<h5>").text(res.name);
         var resLink = $("<a>").attr("href", res.url);
-        $("#results").append(resLink);
+        $("#winner").append($("<h3>").text("Your Randome Choice is:"));
+        $("#winner").append(resLink);
         resLink.append(resName);
         var resThumb = $("<img>").attr("src", res.thumb);
-        $("#results").append(resThumb);
+        $("#winner").append(resThumb);
         var resTimes = $("<p>").text(res.timings);
-        $("#results").append(resTimes);
+        $("#winner").append(resTimes);
         var resRating = $("<p>").text("Average Rating from 0 to 5 is: " + res.user_rating.aggregate_rating);
-        $("#results").append(resRating);
+        $("#winner").append(resRating);
 
         buildRestaurantData(response);
         resultsRandom();
@@ -269,12 +274,12 @@ function zomatoCall(lat, lon) {
 }
 
 function resultsRandom() {
-    var randomListEl = $("<ul>").attr("class","collection center");
+    var randomListEl = $("<div>").attr("class","collection center");
     $("#randomizer").append(randomListEl);
 
     for (var i = 0; i < restaurantData.length; i++) {
         var restaurantDataName = (restaurantData[i].name);
-        var li = $("<li>");
+        var li = $("<a>");
         li.text(restaurantDataName).attr("class", "collection-item");
         randomListEl.append(li);
     }

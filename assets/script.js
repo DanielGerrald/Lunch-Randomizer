@@ -207,7 +207,7 @@ $('#userInput').on('submit', function () {
     }
     else {
         alert("Geolocation is not supported by this browser.");
-    }
+    };
 });
 
 // This will get called after getCurrentPosition()
@@ -228,14 +228,18 @@ function zomatoCall(lat, lon) {
     //check that entered cuisine is valid
     if (inputCuisine in cuisineIds) {
         cuisine = cuisineIds[inputCuisine];
-    } else { 
+    } else {
         $("#check1").attr("style", "display: block");
-        return; };
-        rad = Math.floor($('#radius').val() / 0.00062137);
+        return;
+    };
+
+    //get radius entered, convert to meters and verify value is numeric
+    rad = Math.floor($('#radius').val() / 0.00062137);
     if (!$.isNumeric(rad)) {
         $("#check2").attr("style", "display: block");
-        return;  
-    }
+        return;
+    };
+
     cuisine = cuisineIds[inputCuisine]; //.syntax doesn't work here
     console.log(inputCuisine, cuisine);
     var queryURL = 'https://developers.zomato.com/api/v2.1/search?apikey=' + apiKey + '&count=' + count + '&lat=' + lat + '&lon=' + lon + '&radius=' + rad + '&cuisines=' + cuisine;
@@ -266,10 +270,10 @@ function zomatoCall(lat, lon) {
         console.log(resName);
         callMap(newLat, newLon);
     });
-}
+};
 
 function resultsRandom() {
-    var randomListEl = $("<ul>").attr("class","collection center");
+    var randomListEl = $("<ul>").attr("class", "collection center");
     $("#randomizer").append(randomListEl);
 
     for (var i = 0; i < restaurantData.length; i++) {
@@ -277,11 +281,8 @@ function resultsRandom() {
         var li = $("<li>");
         li.text(restaurantDataName).attr("class", "collection-item");
         randomListEl.append(li);
-    }
-
-
-}
-
+    };
+};
 
 function callMap(newLat, newLon) {
     $("#map").attr("style", "block")
@@ -300,7 +301,7 @@ function callMap(newLat, newLon) {
     $("#navBar").append(newSearch);
     newSearchBtn.html('<a href="index.html">Search Again</a>');
     newSearch.append(newSearchBtn);
-}
+};
 
 function buildRestaurantData(response) {
     $.each(response.restaurants, function (index) {
@@ -308,7 +309,8 @@ function buildRestaurantData(response) {
         var restaurant = {
             name: response.restaurants[index].restaurant.name,
             lat: response.restaurants[index].restaurant.location.latitude,
-            lon: response.restaurants[index].restaurant.location.longitude
+            lon: response.restaurants[index].restaurant.location.longitude,
+            url: response.restaurants[index].restaurant.url
         };
         restaurantData.push(restaurant);
     });

@@ -228,11 +228,16 @@ function zomatoCall(lat, lon) {
     //check that entered cuisine is valid
     if (inputCuisine in cuisineIds) {
         cuisine = cuisineIds[inputCuisine];
-    } else { return; };
-
+    } else { 
+        $("#check1").attr("style", "display: block");
+        return; };
+        rad = Math.floor($('#radius').val() / 0.00062137);
+    if (!$.isNumeric(rad)) {
+        $("#check2").attr("style", "display: block");
+        return;  
+    }
     cuisine = cuisineIds[inputCuisine]; //.syntax doesn't work here
     console.log(inputCuisine, cuisine);
-    rad = Math.floor($('#radius').val() / 0.00062137);
     var queryURL = 'https://developers.zomato.com/api/v2.1/search?apikey=' + apiKey + '&count=' + count + '&lat=' + lat + '&lon=' + lon + '&radius=' + rad + '&cuisines=' + cuisine;
     console.log(queryURL);
 
@@ -240,7 +245,7 @@ function zomatoCall(lat, lon) {
         url: queryURL,
         method: 'GET'
     }).then(function (response) {
-        $("#results").html("").attr("class", "row center");
+        //$("#results").html("").attr("class", "row center");
         var rand = Math.floor(Math.random() * 10);
         var res = response.restaurants[rand].restaurant;
         var newLat = res.location.latitude;
@@ -263,21 +268,16 @@ function zomatoCall(lat, lon) {
     });
 }
 
-function resultsRandom(){
-    var restaurantDataList = [];
+function resultsRandom() {
     var randomListEl = $("<ul>");
-
-    for (var i = 1; i < restaurantData.length; i++){
-    var restaurantDataName = (restaurantData[i].name);
-    restaurantDataList.push(restaurantDataName);
     $("#randomizer").append(randomListEl);
-    randomListEl.append(restaurantDataList[i]);
-}
 
-    console.log(restaurantDataName);
-    console.log(restaurantDataList)
-    
-    // console.log(restaurantData[0]);
+    for (var i = 1; i < restaurantData.length; i++) {
+        var restaurantDataName = (restaurantData[i].name);
+        var li = $("<li>");
+        li.text(restaurantDataName);
+        randomListEl.append(li);
+    }
 
 
 }

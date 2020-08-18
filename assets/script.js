@@ -269,13 +269,13 @@ function zomatoCall(lat, lon) {
 }
 
 function resultsRandom() {
-    var randomListEl = $("<ul>");
+    var randomListEl = $("<ul>").attr("class","collection center");
     $("#randomizer").append(randomListEl);
 
-    for (var i = 1; i < restaurantData.length; i++) {
+    for (var i = 0; i < restaurantData.length; i++) {
         var restaurantDataName = (restaurantData[i].name);
         var li = $("<li>");
-        li.text(restaurantDataName);
+        li.text(restaurantDataName).attr("class", "collection-item");
         randomListEl.append(li);
     }
 

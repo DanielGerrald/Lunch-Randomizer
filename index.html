@@ -4,7 +4,9 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Link to Materialize CSS-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!--Link to local CSS-->
     <link rel="stylesheet" href="./assets/style.css">
     <title>Random Lunch Generator</title>
 </head>
@@ -52,19 +54,26 @@
                         <label for="radius" class="active">How far are you willing to go?</label>
                     </div>
                 </div>
+                <!--Invisible submit button for form-->
                 <button type="submit" style="display:none" id="submitButton"></button>
             </form>
             <div class="col s6" id="randomizer">
                 <!--Block for the randomizer visualizaiton to live in-->
             </div>
         </div>
+        <!--Separate row for showing the map-->
         <div class="row">
+            <!--Holds the entirety of the map called in-->
           <div id="map" style="display:none"></div>
         </div>
     </div>
+    <!--Link to jQuery CDN-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <!--Link to Materialize JS CDN-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!--Link to Google Maps API JS CDN-->
     <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTMCUN8m9lxX0LFNy2_UbKrPmIUbOYqfU"></script>
+    <!--Link to local javascript file-->
     <script src="./assets/script.js"></script>
 </body>
 

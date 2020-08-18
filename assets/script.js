@@ -257,11 +257,31 @@ function zomatoCall(lat, lon) {
         $("#results").append(resRating);
 
         buildRestaurantData(response);
-
+        resultsRandom();
         console.log(resName);
         callMap(newLat, newLon);
     });
 }
+
+function resultsRandom(){
+    var restaurantDataList = [];
+    var randomListEl = $("<ul>");
+
+    for (var i = 1; i < restaurantData.length; i++){
+    var restaurantDataName = (restaurantData[i].name);
+    restaurantDataList.push(restaurantDataName);
+    $("#randomizer").append(randomListEl);
+    randomListEl.append(restaurantDataList[i]);
+}
+
+    console.log(restaurantDataName);
+    console.log(restaurantDataList)
+    
+    // console.log(restaurantData[0]);
+
+
+}
+
 
 function callMap(newLat, newLon) {
     $("#map").attr("style", "block")

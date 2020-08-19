@@ -207,7 +207,13 @@ $('#userInput').on('submit', function () {
     if (navigator.geolocation) {
         // Provide our showPosition() function to getCurrentPosition
         navigator.geolocation.getCurrentPosition(showPosition, getPosFail);
-    }
+    } else {
+        $("#main-content").ready(function(){
+            $('#modal3').modal();
+            var instance = M.Modal.getInstance($("#modal3"));
+            instance.open();
+          });
+    };
 });
 
 function getPosFail() {

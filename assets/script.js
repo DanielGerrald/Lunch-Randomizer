@@ -206,12 +206,17 @@ $('#userInput').on('submit', function () {
     // Make sure browser supports this feature
     if (navigator.geolocation) {
         // Provide our showPosition() function to getCurrentPosition
-        navigator.geolocation.getCurrentPosition(showPosition);
+        navigator.geolocation.getCurrentPosition(showPosition, getPosFail);
     }
-    else {
-        alert("Geolocation is not supported by this browser.");
-    };
 });
+
+function getPosFail() {
+    $("#main-content").ready(function(){
+        $('#modal2').modal();
+        var instance = M.Modal.getInstance($("#modal2"));
+        instance.open();
+      });
+};
 
 // This will get called after getCurrentPosition()
 function showPosition(position) {
@@ -264,6 +269,12 @@ function zomatoCall(lat, lon) {
             callMap(newLat, newLon);
             winner(response);
           }, 3000);
+    }).fail(function() {
+        $("#main-content").ready(function(){
+            $('#modal1').modal();
+            var instance = M.Modal.getInstance($("#modal1"));
+            instance.open();
+          });
     });
 };
 
@@ -357,5 +368,4 @@ function loadSearchButton() {
     $("#navBar").append(newSearch);
     newSearchBtn.html('<a href="index.html">Search Again</a>');
     newSearch.append(newSearchBtn);
-}
-
+};

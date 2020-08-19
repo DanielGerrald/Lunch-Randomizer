@@ -254,28 +254,33 @@ function zomatoCall(lat, lon) {
     }).then(function (response) {
         $("#randomizer").html("");
         $("#winner").html("");
-        
-        var res = response.restaurants[rand].restaurant;
-        var newLat = res.location.latitude;
-        var newLon = res.location.longitude;
-        var resName = $("<h5>").text(res.name);
-        var resLink = $("<a>").attr("href", res.url);
-        $("#winner").append($("<h3>").text("Your Random Choice is:"));
-        $("#winner").append(resLink);
-        resLink.append(resName);
-        var resThumb = $("<img>").attr("src", res.thumb);
-        $("#winner").append(resThumb);
-        var resTimes = $("<p>").text(res.timings);
-        $("#winner").append(resTimes);
-        var resRating = $("<p>").text("Average Rating from 0 to 5 is: " + res.user_rating.aggregate_rating);
-        $("#winner").append(resRating);
+        var newLat = response.restaurants[rand].restaurant.location.latitude;
+        var newLon = response.restaurants[rand].restaurant.location.longitude;
+
 
         buildRestaurantData(response);
         resultsRandom();
-        console.log(resName);
-        callMap(newLat, newLon);
+        setTimeout(() => {
+            callMap(newLat, newLon);
+            winner(response);
+          }, 3000);
     });
 };
+
+function winner(response){
+    var res = response.restaurants[rand].restaurant;
+    var resName = $("<h5>").text(res.name);
+    var resLink = $("<a>").attr("href", res.url);
+    $("#winner").append($("<h3>").text("Your Random Choice is:"));
+    $("#winner").append(resLink);
+    resLink.append(resName);
+    var resThumb = $("<img>").attr("src", res.thumb);
+    $("#winner").append(resThumb);
+    var resTimes = $("<p>").text(res.timings);
+    $("#winner").append(resTimes);
+    var resRating = $("<p>").text("Average Rating from 0 to 5 is: " + res.user_rating.aggregate_rating);
+    $("#winner").append(resRating);
+}
 
 function resultsRandom() {
     var randomListEl = $("<div>").attr("class", "collection center");
@@ -284,7 +289,7 @@ function resultsRandom() {
     for (var i = 0; i < restaurantData.length; i++) {
         var restaurantDataName = (restaurantData[i].name);
         var li = $("<a>");
-        li.text(restaurantDataName).attr("class", "collection-item");
+        li.text(restaurantDataName).attr("class", "collection-item blue-text").attr("href", restaurantData[i].url);
         randomListEl.append(li);
         randomizer();
     };
@@ -296,7 +301,7 @@ function callMap(newLat, newLon) {
     var marker = new google.maps.Marker({ position: myLatLng, map: map });
     map = new google.maps.Map(document.getElementById("map"));
     map.setCenter(myLatLng);
-    map.setZoom(17);
+    map.setZoom(16);
     marker.setMap(map);
     console.log(newLat, newLon);
 
@@ -353,3 +358,4 @@ function loadSearchButton() {
     newSearchBtn.html('<a href="index.html">Search Again</a>');
     newSearch.append(newSearchBtn);
 }
+

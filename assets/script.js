@@ -286,7 +286,7 @@ function zomatoCall(lat, lon) {
 
 function winner(response){
     var res = response.restaurants[rand].restaurant;
-    var resName = $("<h5>").text(res.name);
+    var resName = $("<h4>").text(res.name);
     var resLink = $("<a>").attr("href", res.url);
     $("#winner").append($("<h3>").text("Your Random Choice is:"));
     $("#winner").append(resLink);

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Link to Materialize CSS-->
@@ -38,6 +38,19 @@
                 <!--h1 containing the header, also blue-->
                 <h3 class="header center-align blue-text" id="topTitle">What Are You in the Mood for?</h3>
             </div>
+            <!-- Modal Structure -->
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <h3>No Restaurants Found</h3>
+                    <p>Your search returned no results!</p>
+                </div>
+            </div>
+            <div id="modal2" class="modal">
+                <div class="modal-content">
+                    <h3>Location Blocked</h3>
+                    <p>Please enable your location to continue</p>
+                </div>
+            </div>
         </div>
         <!--Row for the text input boxes-->
         <div class="row" id="results">
@@ -49,7 +62,8 @@
                         <input placeholder="Cuisine" id="cuisine" type="text" class="validate autocomplete">
                         <label for="cuisine" class="active hide-on-small-only">What kind of food would you like?</label>
                         <label for="cuisine" class="active show-on-small hide-on-med-and-up">Cuisine Type</label>
-                        <p for="cuisine" class="active"style="display: none" id="check1">Please enter a valid choice</p>
+                        <p for="cuisine" class="active" style="display: none" id="check1">Please enter a valid choice
+                        </p>
                     </div>
                 </div>
                 <!--Row for radius input-->
@@ -58,7 +72,7 @@
                         <input placeholder="Radius (in miles)" id="radius" type="text" class="validate">
                         <label for="radius" class="active hide-on-small-only">How far are you willing to go?</label>
                         <label for="radius" class="active show-on-small hide-on-med-and-up">Radius</label>
-                        <p for="cuisine" class="active"style="display: none" id="check2">Please enter a number</p>
+                        <p for="cuisine" class="active" style="display: none" id="check2">Please enter a number</p>
                     </div>
                 </div>
                 <!--Invisible submit button for form-->
@@ -74,7 +88,7 @@
         <!--Separate row for showing the map-->
         <div class="row">
             <!--Holds the entirety of the map called in-->
-          <div id="map" style="display:none"></div>
+            <div id="map" style="display:none"></div>
         </div>
     </div>
     <!--Link to jQuery CDN-->

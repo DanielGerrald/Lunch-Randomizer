@@ -307,6 +307,8 @@ function callMap(newLat, newLon) {
     $("#navBar").append(newSearch);
     newSearchBtn.html('<a href="index.html">Search Again</a>');
     newSearch.append(newSearchBtn);
+
+    loadSearchButton();
 };
 
 function buildRestaurantData(response) {
@@ -348,3 +350,14 @@ function randomizer() {
         };
     }, 100);
 };
+
+function loadSearchButton() {
+    $(".search").remove();
+    var newSearch = $("<ul>");
+    var newSearchBtn = $("<li>");
+    newSearch.attr("id", "nav-mobile");
+    newSearch.addClass("left search");
+    $("#navBar").append(newSearch);
+    newSearchBtn.html('<a href="index.html">Search Again</a>');
+    newSearch.append(newSearchBtn);
+}

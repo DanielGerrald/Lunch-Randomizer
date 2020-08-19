@@ -300,14 +300,6 @@ function callMap(newLat, newLon) {
     marker.setMap(map);
     console.log(newLat, newLon);
 
-    var newSearch = $("<ul>");
-    var newSearchBtn = $("<li>");
-    newSearch.attr("id", "nav-mobile");
-    newSearch.addClass("left");
-    $("#navBar").append(newSearch);
-    newSearchBtn.html('<a href="index.html">Search Again</a>');
-    newSearch.append(newSearchBtn);
-
     loadSearchButton();
 };
 

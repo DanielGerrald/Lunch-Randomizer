@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Link to local CSS-->
     <link rel="stylesheet" href="./assets/style.css">
-    <title>Random Lunch Generator</title>
+    <title>Lunch Randomizer</title>
 </head>
 
 <body>
@@ -72,6 +72,7 @@
                         </p>
                     </div>
                 </div>
+                
                 <!--Row for radius input-->
                 <div class="row">
                     <div class="input-field col s12">
@@ -79,10 +80,12 @@
                         <label for="radius" class="active hide-on-small-only">How far are you willing to go?</label>
                         <label for="radius" class="active show-on-small hide-on-med-and-up">Radius</label>
                         <p for="cuisine" class="active" style="display: none" id="check2">Please enter a number</p>
+                        
                     </div>
+                    
                 </div>
-                <!--Invisible submit button for form-->
-                <button type="submit" style="display:none" id="submitButton"></button>
+                
+                <button type="submit" class="blue btn">Submit</button>
             </form>
             <div class="col s6" id="randomizer">
                 <!--Block for the randomizer visualizaiton to live in-->

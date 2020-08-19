@@ -260,7 +260,7 @@ function zomatoCall(lat, lon) {
         var newLon = res.location.longitude;
         var resName = $("<h5>").text(res.name);
         var resLink = $("<a>").attr("href", res.url);
-        $("#winner").append($("<h3>").text("Your Randome Choice is:"));
+        $("#winner").append($("<h3>").text("Your Random Choice is:"));
         $("#winner").append(resLink);
         resLink.append(resName);
         var resThumb = $("<img>").attr("src", res.thumb);
@@ -315,14 +315,3 @@ function buildRestaurantData(response) {
     });
     console.log(restaurantData);
 };
-
-function loadSearchButton() {
-    $(".search").remove();
-    var newSearch = $("<ul>");
-    var newSearchBtn = $("<li>");
-    newSearch.attr("id", "nav-mobile");
-    newSearch.addClass("left search");
-    $("#navBar").append(newSearch);
-    newSearchBtn.html('<a href="index.html">Search Again</a>');
-    newSearch.append(newSearchBtn);
-}

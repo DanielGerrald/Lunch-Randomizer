@@ -13,3 +13,9 @@
 .collection-item {
 padding: 2px !important;
 }
+
+a.active {
+    background-color: #2196f3 !important;
+    color: white !important;
+    font-weight: bold;
+}

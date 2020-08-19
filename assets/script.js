@@ -1,15 +1,16 @@
 var count, lat, lon, rad, cuisine, map;
 var restaurantData = [];
+var rand = Math.floor(Math.random() * 10);
 var cuisineIds = {
     "african": 152,
     "american": 1,
     "argentine": 151,
     "armenian": 175,
     "asian": 3,
-    "bBQ": 193,
+    "bbq": 193,
     "bagels": 955,
     "bakery": 5,
-    "bar Food": 227,
+    "bar food": 227,
     "beverages": 270,
     "brazilian": 159,
     "breakfast": 182,
@@ -21,32 +22,32 @@ var cuisineIds = {
     "california": 956,
     "caribbean": 158,
     "chinese": 25,
-    "coffee and Tea": 161,
+    "coffee and tea": 161,
     "colombian": 287,
     "crepes": 881,
     "cuban": 153,
     "deli": 192,
     "desserts": 100,
-    "dim Sum": 411,
+    "dim sum": 411,
     "diner": 541,
     "dominican": 958,
     "donuts": 959,
-    "drinks Only": 268,
-    "eastern European": 651,
+    "drinks only": 268,
+    "eastern european": 651,
     "ethiopian": 149,
     "european": 38,
-    "fast Food": 40,
+    "fast food": 40,
     "floribbean": 960,
     "fondue": 318,
     "french": 45,
-    "frozen Yogurt": 501,
+    "frozen yogurt": 501,
     "fusion": 274,
     "german": 134,
     "greek": 156,
     "grill": 181,
     "hawaiian": 521,
-    "healthy Food": 143,
-    "ice Cream": 233,
+    "healthy food": 143,
+    "ice cream": 233,
     "indian": 148,
     "international": 154,
     "irish": 135,
@@ -57,28 +58,28 @@ var cuisineIds = {
     "kebab": 178,
     "korean": 67,
     "laotian": 901,
-    "latin American": 136,
+    "latin american": 136,
     "lebanese": 66,
     "mediterranean": 70,
     "mexican": 73,
-    "middle Eastern": 137,
+    "middle eastern": 137,
     "mongolian": 74,
     "moroccan": 147,
     "nepalese": 117,
-    "new American": 996,
+    "new american": 996,
     "pakistani": 139,
     "patisserie": 183,
     "peruvian": 162,
     "pizza": 82,
     "polish": 219,
-    "pub Food": 983,
+    "pub food": 983,
     "ramen": 320,
     "russian": 84,
     "salad": 998,
     "salvadorean": 601,
     "sandwich": 304,
     "seafood": 83,
-    "soul Food": 461,
+    "soul food": 461,
     "southern": 471,
     "southwestern": 966,
     "spanish": 89,
@@ -90,7 +91,7 @@ var cuisineIds = {
     "tapas": 179,
     "tea": 163,
     "teriyaki": 964,
-    "tex-Mex": 150,
+    "tex-mex": 150,
     "thai": 95,
     "turkish": 142,
     "vegetarian": 308,
@@ -254,7 +255,6 @@ function zomatoCall(lat, lon) {
         $("#randomizer").html("");
         $("#winner").html("");
         
-        var rand = Math.floor(Math.random() * 10);
         var res = response.restaurants[rand].restaurant;
         var newLat = res.location.latitude;
         var newLon = res.location.longitude;
@@ -286,6 +286,7 @@ function resultsRandom() {
         var li = $("<a>");
         li.text(restaurantDataName).attr("class", "collection-item");
         randomListEl.append(li);
+        randomizer();
     };
 };
 
@@ -320,4 +321,30 @@ function buildRestaurantData(response) {
         restaurantData.push(restaurant);
     });
     console.log(restaurantData);
+};
+
+function randomizer() {
+    //set variables for cycling active class
+    var i = 0;
+    var j = 0;
+    //create interval for cycling through active class
+    var randInterval = setInterval(function () {
+        $(".collection-item").eq(i).addClass("active");
+        if ($(".collection-item").eq(i - 1).hasClass("active")) {
+            $(".collection-item").eq(i - 1).removeClass("active");
+        };
+        //the incrementation below just helps visualization of the restaurant list
+        i++;
+        if (i >= 11) {
+            i = 0;
+            j++;
+        };
+        if (j >= 2) {
+            if (i > rand) {
+                $(".collection-item").eq(i - 1).removeClass("active");
+                clearInterval(randInterval);
+                $(".collection-item").eq(rand).addClass("active");
+            };
+        };
+    }, 100);
 };

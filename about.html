@@ -1,135 +1,149 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Link to Materialize CSS-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Link to local CSS-->
-    <link rel="stylesheet" href="./assets/style.css">
-    <title>About Us</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--Link to Materialize CSS-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!--Link to Google API Icons-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Link to local CSS-->
+  <link rel="stylesheet" href="./assets/style.css">
+  <title>About Us</title>
 </head>
 
 <body>
-    <!--Navbar at the top of the page-->
-    <nav>
-        <!--Color changed to a light blue-->
-        <div class="nav-wrapper blue lighten-2" id="navBar">
-            <!--Centered title that links back to the starting page for larger display-->
-            <a href="index.html" class="brand-logo center hide-on-small-only">Lunch Randomizer</a>
-            <!--Centered title that links back to the starting page for smaller display-->
-            <a href="index.html" class="brand-logo center show-on-small hide-on-med-and-up">Lunch</a>
-            <!--List to throw in another other possible links at the top-->
-            <ul id="nav-mobile" class="left">
-                <!--Links back to start of randomizere-->
-                <li><a href="index.html">Back To Search</a></li>
-            </ul>
+  <!--Navbar at the top of the page-->
+  <nav>
+    <!--Color changed to a light blue-->
+    <div class="nav-wrapper blue lighten-2" id="navBar">
+      <!--Centered title that links back to the starting page for larger display-->
+      <a href="index.html" class="brand-logo center hide-on-small-only">Lunch Randomizer</a>
+      <!--Centered title that links back to the starting page for smaller display-->
+      <a href="index.html" class="brand-logo center show-on-small hide-on-med-and-up">Lunch</a>
+      <!--List to throw in another other possible links at the top-->
+      <ul id="nav-mobile" class="left">
+        <!--Links back to start of randomizere-->
+        <li><a href="index.html">Back To Search</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- project background information -->
+  <div class="row">
+    <h3 class="blue-text center-align">Our story</h3>
+    <div class="col s12 m12">
+      <div class="card-panel blue">
+        <span class="white-text">Our team decided to create a random restaurant selector for our first project. We
+          wanted to solve a
+          problem which all of us have encountered in our lives. Where to eat lunch or dinner? When you've worked or
+          lived in an area for an extended
+          period of time, you've probably eaten at a majority of places within your comfort radius. When you just can't
+          decide or want some
+          inspiration, we got you covered. Just type in a cuisine and the distance you are willing to travel and
+          <strong>VOILA</strong> your future meal awaits!
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- 1st card on first row top left -->
+    <div class="col s6 m6 l6 valign-wrapper">
+      <div class="card-panel card medium grey lighten-5 z-depth-1">
+        <div class="col s3">
+          <img src="./assets/images/jordan.jpg" alt="jordan triplett graduation picture" class="circle responsive-img">
+          <!-- notice the "circle" class -->
         </div>
-    </nav>
-   
-    <!-- project background information -->
-    <div class="row"><h3 class="blue-text center-align">Our story</h3>
-      <div class="col s12 m12">
-        <div class="card-panel blue">
-          <span class="white-text">Our team decided to create a random restaurant selector for our first project. We wanted to solve a 
-            problem which all of us have encountered in our lives. Where to eat lunch or dinner? When you've worked or lived in an area for an extended 
-            period of time, you've probably eaten at a majority of places within your comfort radius. When you just can't decide or want some
-            inspiration, we got you covered. Just type in a cuisine and the distance you are willing to travel and <strong>VOILA</strong> your future meal awaits!
+        <h5>Jordan Triplett</h5>
+        <a class="blue-text" href="https://www.linkedin.com/in/jordantriplett/"><strong>LinkedIn</strong></a>
+        <br>
+        <!-- <a href="#">Portfolio</a> -->
+        <div class="col l12">
+          <span class="black-text">
+            Currently in Charlotte, NC, Jordan is launching into a career in full-stack development after originally
+            receiving a B.S. in Psychology at UNCC. He's also a director, editor, videographer, etc.
+            If it's got a camera, he's got you covered.
           </span>
         </div>
       </div>
     </div>
-
-      <div class="row ">
-        <!-- 1st card on first row top left -->
-          <div class="col s6 m6 l6 valign-wrapper">
-            <div class="card-panel card medium grey lighten-5 z-depth-1">
-            <div class="col s3">
-              <img src="./assets/images/jordan.jpg" alt="jordan triplett graduation picture" class="circle responsive-img"> <!-- notice the "circle" class -->
-            </div>
-            <h5>Jordan Triplett</h5>
-            <a class="blue-text" href="https://www.linkedin.com/in/jordantriplett/"><strong>LinkedIn</strong></a> 
-            <br>
-            <!-- <a href="#">Portfolio</a> -->
-            <div class="col l12">
-              <span class="black-text">
-                Currently in Charlotte, NC, Jordan is launching into a career in full-stack development after originally 
-                receiving a B.S. in Psychology at UNCC. He's also a director, editor, videographer, etc. 
-                If it's got a camera, he's got you covered.
-              </span>
-            </div>
-          </div>
+    <!-- 2nd card on first row top right -->
+    <div class="col s6 m6 l6 valign-wrapper">
+      <div class="card-panel card medium grey lighten-5 z-depth-1">
+        <div class="col s3">
+          <img src="./assets/images/gino.png" alt="gino Zaccardelli profile picture" class="circle responsive-img">
+          <!-- notice the "circle" class -->
         </div>
-<!-- 2nd card on first row top right -->
-        <div class="col s6 m6 l6 valign-wrapper">
-            <div class="card-panel card medium grey lighten-5 z-depth-1">
-            <div class="col s3">
-              <img src="./assets/images/gino.png" alt="gino Zaccardelli profile picture" class="circle responsive-img"> <!-- notice the "circle" class -->
-            </div>
-            <h5>Gino Zaccardelli</h5>
-            <a class="blue-text " href="https://www.linkedin.com/in/gino-zaccardelli-06887418/"><strong>LinkedIn</strong></a> 
-            <br>
-            <!-- <a href="#">Portfolio</a> -->
-            <div class="col l12">
-              <span class="black-text">
-                Originally from Cleveland Ohio, Gino is now located in 
-                Charlotte North Carolina. After years as an IT Engineer, Gino decided to move into a career in full-stack development.
-              </span>
-            </div>
-          </div>
+        <h5>Gino Zaccardelli</h5>
+        <a class="blue-text "
+          href="https://www.linkedin.com/in/gino-zaccardelli-06887418/"><strong>LinkedIn</strong></a>
+        <br>
+        <!-- <a href="#">Portfolio</a> -->
+        <div class="col l12">
+          <span class="black-text">
+            Originally from Cleveland Ohio, Gino is now located in
+            Charlotte North Carolina. After years as an IT Engineer, Gino decided to move into a career in full-stack
+            development.
+          </span>
         </div>
       </div>
+    </div>
+  </div>
 
-      <div class="row ">
-        <!-- 1st card on 2nd row top left -->
-          <div class="col s6 m6 l6 valign-wrapper">
-            <div class="card-panel card medium grey lighten-5 z-depth-1">
-            <div class="col s3">
-              <img src="./assets/images/daniel.jpg" alt="daniel Gerrald profile picture" class="circle responsive-img"> <!-- notice the "circle" class -->
-            </div>
-            <h5>Daniel Gerrald</h5>
-            <a class="blue-text "  href="https://www.linkedin.com/in/daniel-gerrald-493b89165/"><strong>LinkedIn</strong></a> 
-            <br>
-            <!-- <a href="#">Portfolio</a> -->
-            <div class="col l12">
-              <span class="black-text">
-                Recently transplanted from Charleston, SC to Charlotte, NC. Daniel has an associates degree in Telecommunication 
-                System Management. With 10 years experience in the technology field he is advancing his skills with full-stack development.
-              </span>
-            </div>
-          </div>
+  <div class="row ">
+    <!-- 1st card on 2nd row top left -->
+    <div class="col s6 m6 l6 valign-wrapper">
+      <div class="card-panel card medium grey lighten-5 z-depth-1">
+        <div class="col s3">
+          <img src="./assets/images/daniel.jpg" alt="daniel Gerrald profile picture" class="circle responsive-img">
+          <!-- notice the "circle" class -->
         </div>
-<!-- 2nd card on 2nd row top right -->
-        <div class="col s3 m6 l6 valign-wrapper">
-            <div class="card-panel card medium grey lighten-5 z-depth-1">
-            <div class="col s3">
-              <img src="./assets/images/adam.jpg" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
-            </div>
-            <h5>Adam Grossman</h5>
-            <a class="blue-text " href="https://www.linkedin.com/in/adam-grossman-charlotte/"><strong>LinkedIn</strong></a> 
-            <!-- <br><a href="#">Portfolio</a> -->
-            <div class="col l12">
-              <span class="black-text">
-                I moved from NJ in October of 2014 and never looked back. I am currently looking to change careers from Sales to a full-stack
-                developer. I have 2 kids and love fishing, coaching, and spending time with my family.
-              </span>
-            </div>
-          </div>
+        <h5>Daniel Gerrald</h5>
+        <a class="blue-text " href="https://www.linkedin.com/in/daniel-gerrald-493b89165/"><strong>LinkedIn</strong></a>
+        <br>
+        <!-- <a href="#">Portfolio</a> -->
+        <div class="col l12">
+          <span class="black-text">
+            Recently transplanted from Charleston, SC to Charlotte, NC. Daniel has an associates degree in
+            Telecommunication
+            System Management. With 10 years experience in the technology field he is advancing his skills with
+            full-stack development.
+          </span>
         </div>
       </div>
-    
+    </div>
+    <!-- 2nd card on 2nd row top right -->
+    <div class="col s3 m6 l6 valign-wrapper">
+      <div class="card-panel card medium grey lighten-5 z-depth-1">
+        <div class="col s3">
+          <img src="./assets/images/adam.jpg" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+        </div>
+        <h5>Adam Grossman</h5>
+        <a class="blue-text " href="https://www.linkedin.com/in/adam-grossman-charlotte/"><strong>LinkedIn</strong></a>
+        <!-- <br><a href="#">Portfolio</a> -->
+        <div class="col l12">
+          <span class="black-text">
+            I moved from NJ in October of 2014 and never looked back. I am currently looking to change careers from
+            Sales to a full-stack
+            developer. I have 2 kids and love fishing, coaching, and spending time with my family.
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
-    <!--Link to jQuery CDN-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
-    <!--Link to Materialize JS CDN-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <!--Link to Google Maps API JS CDN-->
-    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTMCUN8m9lxX0LFNy2_UbKrPmIUbOYqfU"></script>
-    <!--Link to local javascript file-->
-    <script src="./assets/script.js"></script>
+
+  <!--Link to jQuery CDN-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+  <!--Link to Materialize JS CDN-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!--Link to Google Maps API JS CDN-->
+  <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTMCUN8m9lxX0LFNy2_UbKrPmIUbOYqfU"></script>
+  <!--Link to local javascript file-->
+  <script src="./assets/script.js"></script>
 </body>
 
 </html>

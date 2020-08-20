@@ -208,20 +208,20 @@ $('#userInput').on('submit', function () {
         // Provide our showPosition() function to getCurrentPosition
         navigator.geolocation.getCurrentPosition(showPosition, getPosFail);
     } else {
-        $("#main-content").ready(function(){
+        $("#main-content").ready(function () {
             $('#modal3').modal();
             var instance = M.Modal.getInstance($("#modal3"));
             instance.open();
-          });
+        });
     };
 });
 
 function getPosFail() {
-    $("#main-content").ready(function(){
+    $("#main-content").ready(function () {
         $('#modal2').modal();
         var instance = M.Modal.getInstance($("#modal2"));
         instance.open();
-      });
+    });
 };
 
 // This will get called after getCurrentPosition()
@@ -255,9 +255,9 @@ function zomatoCall(lat, lon) {
     };
 
     cuisine = cuisineIds[inputCuisine]; //.syntax doesn't work here
-    console.log(inputCuisine, cuisine);
+    //console.log(inputCuisine, cuisine);
     var queryURL = 'https://developers.zomato.com/api/v2.1/search?apikey=' + apiKey + '&count=' + count + '&lat=' + lat + '&lon=' + lon + '&radius=' + rad + '&cuisines=' + cuisine;
-    console.log(queryURL);
+    //console.log(queryURL);
 
     $.ajax({
         url: queryURL,
@@ -274,17 +274,17 @@ function zomatoCall(lat, lon) {
         setTimeout(() => {
             callMap(newLat, newLon);
             winner(response);
-          }, 3000);
-    }).fail(function() {
-        $("#main-content").ready(function(){
+        }, 3000);
+    }).fail(function () {
+        $("#main-content").ready(function () {
             $('#modal1').modal();
             var instance = M.Modal.getInstance($("#modal1"));
             instance.open();
-          });
+        });
     });
 };
 
-function winner(response){
+function winner(response) {
     var res = response.restaurants[rand].restaurant;
     var resName = $("<h4>").text(res.name);
     var resLink = $("<a>").attr("href", res.url);
@@ -320,8 +320,9 @@ function callMap(newLat, newLon) {
     map.setCenter(myLatLng);
     map.setZoom(16);
     marker.setMap(map);
-    console.log(newLat, newLon);
+    //console.log(newLat, newLon);
 
+    //Loads the search again button
     loadSearchButton();
 };
 
@@ -336,7 +337,7 @@ function buildRestaurantData(response) {
         };
         restaurantData.push(restaurant);
     });
-    console.log(restaurantData);
+    //console.log(restaurantData);
 };
 
 function randomizer() {

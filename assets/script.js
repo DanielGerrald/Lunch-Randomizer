@@ -241,6 +241,7 @@ function zomatoCall(lat, lon) {
 
     //check that entered cuisine is valid
     if (inputCuisine in cuisineIds) {
+        $("#check1").attr("style", "display: none");
         cuisine = cuisineIds[inputCuisine];
     } else {
         $("#check1").attr("style", "display: block");
@@ -254,6 +255,8 @@ function zomatoCall(lat, lon) {
         return;
     };
 
+    $("#check2").attr("style", "display: none");
+    
     cuisine = cuisineIds[inputCuisine]; //.syntax doesn't work here
     //console.log(inputCuisine, cuisine);
     var queryURL = 'https://developers.zomato.com/api/v2.1/search?apikey=' + apiKey + '&count=' + count + '&lat=' + lat + '&lon=' + lon + '&radius=' + rad + '&cuisines=' + cuisine;

@@ -5,6 +5,7 @@ Team of Gino Zaccardelli, Jordan Triplett, Daniel Gerrald, and Adam Grossman
 
 
 <img src="./assets/images/ranGen.gif" alt="animated gif of random lunch generator website">
+
 See the deployed app here: https://danielgerrald.github.io/Project_1/
 
 Our team was randomly chosen and we were given tasked to create an app that incorporated 2 API's that we have never used before. We also want to expand our knowledge of other CSS frameworks so we decided to use Materialize for the CSS. The app has a polished UI and is interactive as well. 

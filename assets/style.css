@@ -1,21 +1,21 @@
 /*Display and centering of the map from Google Maps API*/
 #map {
-    height: 600px;
-    width: 100%;
-    position: relative;
+  height: 600px;
+  width: 100%;
+  position: relative;
 }
 
 #check1, #check2 {
-  color:red;
+  color: red;
   animation: ease-in 1s;
 }
 
 .collection-item {
-padding: 2px !important;
+  padding: 2px !important;
 }
 
 a.active {
-    background-color: #2196f3 !important;
-    color: white !important;
-    font-weight: bold;
+  background-color: #2196f3 !important;
+  color: white !important;
+  font-weight: bold;
 }

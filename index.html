@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Link to Materialize CSS-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!--Link to Google API Icons-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Link to local CSS-->
     <link rel="stylesheet" href="./assets/style.css">
@@ -72,19 +73,16 @@
                         </p>
                     </div>
                 </div>
-                
+
                 <!--Row for radius input-->
                 <div class="row">
                     <div class="input-field col s12">
                         <input placeholder="Radius (in miles)" id="radius" type="text" class="validate">
                         <label for="radius" class="active hide-on-small-only">How far are you willing to go?</label>
                         <label for="radius" class="active show-on-small hide-on-med-and-up">Radius</label>
-                        <p for="cuisine" class="active" style="display: none" id="check2">Please enter a number</p>
-                        
+                        <p for="radius" class="active" style="display: none" id="check2">Please enter a number</p>
                     </div>
-                    
                 </div>
-                
                 <button type="submit" class="blue btn">Submit</button>
             </form>
             <div class="col s6" id="randomizer">

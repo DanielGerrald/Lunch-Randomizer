@@ -254,13 +254,14 @@ function zomatoCall(lat, lon) {
         $("#check2").attr("style", "display: block");
         return;
     };
+    console.log(rad);
 
     $("#check2").attr("style", "display: none");
     
     cuisine = cuisineIds[inputCuisine]; //.syntax doesn't work here
     //console.log(inputCuisine, cuisine);
     var queryURL = 'https://developers.zomato.com/api/v2.1/search?apikey=' + apiKey + '&count=' + count + '&lat=' + lat + '&lon=' + lon + '&radius=' + rad + '&cuisines=' + cuisine;
-    //console.log(queryURL);
+    console.log(queryURL);
 
     $.ajax({
         url: queryURL,
@@ -304,7 +305,7 @@ function winner(response) {
 
 function resultsRandom() {
     var randomListEl = $("<div>").attr("class", "collection center");
-    $("#randomizer").append(randomListEl);
+    $("#randomizer").append(randomListEl).attr("class", "center");
 
     for (var i = 0; i < restaurantData.length; i++) {
         var restaurantDataName = (restaurantData[i].name);
@@ -313,6 +314,7 @@ function resultsRandom() {
         randomListEl.append(li);
         randomizer();
     };
+    $('#userInput').remove();
 };
 
 function callMap(newLat, newLon) {

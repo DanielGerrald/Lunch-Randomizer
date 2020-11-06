@@ -62,7 +62,7 @@
         <!--Row for the text input boxes-->
         <div class="row center-align" id="results">
             <!--Column for entire form-->
-            <form id="userInput">
+            <form id="userInput" autocomplete="off">
                 <!--Row for type of cuisine input-->
                 <div class="row">
                     <div class="input-field col s12">
@@ -77,7 +77,7 @@
                 <!--Row for radius input-->
                 <div class="row">
                     <div class="input-field col s12">
-                        <input placeholder="Radius (in miles)" id="radius" type="text" class="validate">
+                        <input placeholder="Radius (in miles)" id="radius" type="text" class="validate" autocomplete="false">
                         <label for="radius" class="active hide-on-small-only">How far are you willing to go?</label>
                         <label for="radius" class="active show-on-small hide-on-med-and-up">Radius</label>
                         <p for="radius" class="active" style="display: none" id="check2">Please enter a number</p>

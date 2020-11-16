@@ -1,111 +1,136 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--Link to Materialize CSS-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
     <!--Link to Google API Icons-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <!--Link to local CSS-->
-    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="./assets/style.css" />
     <title>Lunch Randomizer</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <!--Navbar at the top of the page-->
     <nav>
-        <!--Color changed to a light blue-->
-        <div class="nav-wrapper blue " id="navBar">
-            <!--Centered title that links back to the starting page for larger display-->
-            <a href="index.html" class="brand-logo center hide-on-small-only">Lunch Randomizer</a>
-            <!--Centered title that links back to the starting page for smaller display-->
-            <a href="index.html" class="brand-logo center show-on-small hide-on-med-and-up">Lunch</a>
-            <!--List to throw in another other possible links at the top-->
-            <ul id="nav-mobile" class="right">
-                <!--Will update link to about.html when we create the page-->
-                <li><a href="./about.html">About Us</a></li>
-            </ul>
-        </div>
+      <!--Color changed to a light blue-->
+      <div class="nav-wrapper blue" id="navBar">
+        <!--Centered title that links back to the starting page for larger display-->
+        <a href="index.html" class="brand-logo center hide-on-small-only"
+          >Lunch Randomizer</a
+        >
+        <!--Centered title that links back to the starting page for smaller display-->
+        <a
+          href="index.html"
+          class="brand-logo center show-on-small hide-on-med-and-up"
+          >Lunch</a
+        >
+        <!--List to throw in another other possible links at the top-->
+        <ul id="nav-mobile" class="right">
+          <!--Will update link to about.html when we create the page-->
+          <li><a href="./about.html">About Us</a></li>
+        </ul>
+      </div>
     </nav>
 
     <!--Container for the page content-->
     <div class="container" id="main-content">
-        <!--Row for the header-->
-        <div class="row">
-            <!--Column for the header-->
-            <div class="col s12">
-                <!--h1 containing the header, also blue-->
-                <h3 class="header center-align blue-text" id="topTitle">What Are You in the Mood for?</h3>
-            </div>
-            <!-- Modal Structure -->
-            <div id="modal1" class="modal">
-                <div class="modal-content">
-                    <h3>No Restaurants Found</h3>
-                    <p>Your search returned no results!</p>
-                </div>
-            </div>
-            <div id="modal2" class="modal">
-                <div class="modal-content">
-                    <h3>Location Blocked</h3>
-                    <p>Please enable your location to continue</p>
-                </div>
-            </div>
-            <div id="modal3" class="modal">
-                <div class="modal-content">
-                    <h3>Browser Support</h3>
-                    <p>Your browser doesn't support location functionality</p>
-                </div>
-            </div>
+      <!--Row for the header-->
+      <div class="row">
+        <!--Column for the header-->
+        <div class="col s12">
+          <!--h1 containing the header, also blue-->
+          <h3 class="header center-align blue-text" id="topTitle">
+            What Are You in the Mood for?
+          </h3>
         </div>
-        <!--Row for the text input boxes-->
-        <div class="row center-align" id="results">
-            <!--Column for entire form-->
-            <form id="userInput" autocomplete="off">
-                <!--Row for type of cuisine input-->
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input placeholder="Cuisine" id="cuisine" type="text" class="validate autocomplete">
-                        <label for="cuisine" class="active hide-on-small-only">What kind of food would you like?</label>
-                        <label for="cuisine" class="active show-on-small hide-on-med-and-up">Cuisine Type</label>
-                        <p for="cuisine" class="active" style="display: none" id="check1">Please enter a valid choice
-                        </p>
-                    </div>
-                </div>
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+          <div class="modal-content">
+            <h3>No Restaurants Found</h3>
+            <p>Your search returned no results!</p>
+          </div>
+        </div>
+        <div id="modal2" class="modal">
+          <div class="modal-content">
+            <h3>Location Blocked</h3>
+            <p>Please enable your location to continue</p>
+          </div>
+        </div>
+        <div id="modal3" class="modal">
+          <div class="modal-content">
+            <h3>Browser Support</h3>
+            <p>Your browser doesn't support location functionality</p>
+          </div>
+        </div>
+      </div>
+      <!--Row for the text input boxes-->
+      <div class="row center-align" id="results">
+        <!--Column for entire form-->
+        <form id="userInput" autocomplete="off">
+          <!--Row for type of cuisine input-->
+          <div class="row">
+            <div class="input-field col s12">
+              <input
+                placeholder="Cuisine"
+                id="cuisine"
+                type="text"
+                class="validate autocomplete"
+              />
+              <label for="cuisine" style="font-size:2vw" class="active hide-on-small-only"
+                >What kind of food would you like?</label
+              >
+              <p for="cuisine" class="active" style="display: none" id="check1">
+                Please enter a valid choice
+              </p>
+            </div>
+          </div>
 
-                <!--Row for radius input-->
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input placeholder="Radius (in miles)" id="radius" type="text" class="validate" autocomplete="false">
-                        <label for="radius" class="active hide-on-small-only">How far are you willing to go?</label>
-                        <label for="radius" class="active show-on-small hide-on-med-and-up">Radius</label>
-                        <p for="radius" class="active" style="display: none" id="check2">Please enter a number</p>
-                    </div>
-                </div>
-                <button type="submit" class="blue btn">Submit</button>
-            </form>
-            <div class="center-align" id="randomizer">
-                <!--Block for the randomizer visualizaiton to live in-->
+          <!--Row for radius input-->
+          <div class="row">
+            <div class="input-field col s12">
+              <label for="radius" style="font-size:2vw" class="active hide-on-small-only"
+                >How far are you willing to travel? (in Miles)</label
+              >
+              <p class="range-field">
+                <input type="range" id="radius" min="0" max="15" />
+              </p>
             </div>
+          </div>
+          <button id="submit-icon" type="submit" class="blue btn">
+            Submit
+          </button>
+        </form>
+        <div class="center-align" id="randomizer">
+          <!--Block for the randomizer visualizaiton to live in-->
         </div>
-        <!--Row for the winner out of the 10 options-->
-        <div class="row center" id="winner">
-        </div>
-        <!--Separate row for showing the map-->
-        <div class="row">
-            <!--Holds the entirety of the map called in-->
-            <div id="map" style="display:none"></div>
-        </div>
+      </div>
+      <!--Row for the winner out of the 10 options-->
+      <div class="row center" id="winner"></div>
+      <!--Separate row for showing the map-->
+      <div class="row">
+        <!--Holds the entirety of the map called in-->
+        <div id="map" style="display: none"></div>
+      </div>
     </div>
     <!--Link to jQuery CDN-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
     <!--Link to Materialize JS CDN-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!--Link to Google Maps API JS CDN-->
-    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTMCUN8m9lxX0LFNy2_UbKrPmIUbOYqfU"></script>
+    <script
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTMCUN8m9lxX0LFNy2_UbKrPmIUbOYqfU"
+    ></script>
     <!--Link to local javascript file-->
     <script src="./assets/script.js"></script>
-</body>
-
+  </body>
 </html>

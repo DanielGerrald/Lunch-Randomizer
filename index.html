@@ -78,19 +78,17 @@
         <form id="userInput" autocomplete="off">
           <!--Row for type of cuisine input-->
           <div class="row">
-            <div class="input-field col s12">
+            <div class="col s12">
+              <label for="cuisine" style="font-size: 25px" class="active"
+                >What kind of food would you like?</label
+              >
               <input
                 placeholder="Cuisine"
                 id="cuisine"
                 type="text"
                 class="validate autocomplete"
-              />
-              <label
-                for="cuisine"
                 style="font-size: 25px"
-                class="active"
-                >What kind of food would you like?</label
-              >
+              />
               <p for="cuisine" class="active" style="display: none" id="check1">
                 Please enter a valid choice
               </p>
@@ -99,14 +97,11 @@
 
           <!--Row for radius input-->
           <div class="row">
-            <div class="input-field col s12">
-              <label
-                for="radius"
-                style="font-size: 25px"
-                class="active"
+            <div class="col s12">
+              <label for="radius" style="font-size: 25px" class="active"
                 >How far are you willing to travel? (in Miles)</label
               >
-              <p class="range-field">
+              <p class="range-field" style="font-size: 25px">
                 <input type="range" id="radius" min="0" max="15" />
               </p>
             </div>

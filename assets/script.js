@@ -104,7 +104,7 @@ count = 10; //placeholder value
 $(document).ready(function () {
   $("input.autocomplete").autocomplete({
     data: {
-      "American": 152,
+      "American": null,
       "African": null,
       "Argentine": null,
       "Armenian": null,
@@ -206,7 +206,7 @@ $(document).ready(function () {
 $("#userInput").on("submit", function () {
   event.preventDefault();
   restaurantData = [];
-
+$("#submit-icon").attr("class", "blue btn-floating btn-large pulse").html('<i class="large material-icons">local_dining</i>');
   // Make sure browser supports this feature
   if (navigator.geolocation) {
     // Provide our showPosition() function to getCurrentPosition
@@ -215,6 +215,7 @@ $("#userInput").on("submit", function () {
     $("#main-content").ready(function () {
       $("#modal3").modal();
       var instance = M.Modal.getInstance($("#modal3"));
+      $("#submit-icon").attr("class", "blue btn").html('Submit');
       instance.open();
     });
   }
@@ -224,6 +225,7 @@ function getPosFail() {
   $("#main-content").ready(function () {
     $("#modal2").modal();
     var instance = M.Modal.getInstance($("#modal2"));
+    $("#submit-icon").attr("class", "blue btn").html('Submit');
     instance.open();
   });
 }
@@ -233,6 +235,7 @@ function showPosition(position) {
   // Grab coordinates from the given object
   lat = position.coords.latitude;
   lon = position.coords.longitude;
+
 
   // Call our next function, passing on the coordinates
   zomatoCall(lat, lon);
@@ -248,18 +251,13 @@ function zomatoCall(lat, lon) {
     cuisine = cuisineIds[inputCuisine];
   } else {
     $("#check1").attr("style", "display: block");
+    $("#submit-icon").attr("class", "blue btn").html('Submit');
     return;
   }
 
   //get radius entered, convert to meters and verify value is numeric
   rad = Math.floor($("#radius").val() / 0.00062137);
-  if (!$.isNumeric(rad)) {
-    $("#check2").attr("style", "display: block");
-    return;
-  }
   console.log(rad);
-
-  $("#check2").attr("style", "display: none");
 
   cuisine = cuisineIds[inputCuisine]; //.syntax doesn't work here
   //console.log(inputCuisine, cuisine);
@@ -299,6 +297,7 @@ function zomatoCall(lat, lon) {
       $("#main-content").ready(function () {
         $("#modal1").modal();
         var instance = M.Modal.getInstance($("#modal1"));
+        $("#submit-icon").attr("class", "blue btn").html('Submit');
         instance.open();
       });
     });

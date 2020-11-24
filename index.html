@@ -75,7 +75,7 @@
       <!--Row for the text input boxes-->
       <div class="row center-align" id="results">
         <!--Column for entire form-->
-        <form id="userInput" autocomplete="off">
+        <form id="userInput" autocomplete="off" onsubmit="submitButton.disabled = true; return true;">
           <!--Row for type of cuisine input-->
           <div class="row">
             <div class="col s12">
@@ -106,7 +106,7 @@
               </p>
             </div>
           </div>
-          <button id="submit-icon" type="submit" class="blue btn">
+          <button id="submit-icon" name="submitButton" type="submit" class="blue btn">
             Submit
           </button>
         </form>

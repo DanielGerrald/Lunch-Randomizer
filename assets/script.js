@@ -310,7 +310,7 @@ function winner(response) {
   $("#winner").append($("<h3>").text("Your Random Choice is:"));
   $("#winner").append(resLink);
   resLink.append(resName);
-  var resThumb = $("<img>").attr("src", res.thumb);
+  var resThumb = $("<img>").attr("src", res.thumb).attr("alt", res.name);
   $("#winner").append(resThumb);
   var resTimes = $("<p>").text(res.timings);
   $("#winner").append(resTimes);

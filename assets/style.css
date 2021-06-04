@@ -5,17 +5,99 @@
   position: relative;
 }
 
-#check1, #check2 {
+#check1,
+#check2 {
   color: red;
   animation: ease-in 1s;
 }
 
 .collection-item {
   padding: 2px !important;
+  color: #004880 !important;
 }
 
 a.active {
-  background-color: #2196f3 !important;
+  background-color: #004880 !important;
   color: white !important;
   font-weight: bold;
+}
+
+.header {
+  color: #004880 !important;
+}
+#winner h4 {
+  color: #004880 !important;
+}
+
+.nav-wrapper {
+  background: #004880 !important;
+}
+
+.card-panel {
+  background: #004880 !important;
+}
+.blue-text {
+  color: #004880 !important;
+}
+
+.dropdown-content li > a,
+.dropdown-content li > span {
+  color: #004880 !important;
+}
+input:not([type]):focus:not([readonly]),
+input[type="text"]:not(.browser-default):focus:not([readonly]),
+input[type="password"]:not(.browser-default):focus:not([readonly]),
+input[type="email"]:not(.browser-default):focus:not([readonly]),
+input[type="url"]:not(.browser-default):focus:not([readonly]),
+input[type="time"]:not(.browser-default):focus:not([readonly]),
+input[type="date"]:not(.browser-default):focus:not([readonly]),
+input[type="datetime"]:not(.browser-default):focus:not([readonly]),
+input[type="datetime-local"]:not(.browser-default):focus:not([readonly]),
+input[type="tel"]:not(.browser-default):focus:not([readonly]),
+input[type="number"]:not(.browser-default):focus:not([readonly]),
+input[type="search"]:not(.browser-default):focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #004880 !important;
+  -webkit-box-shadow: 0 1px 0 0 #004880 !important;
+  box-shadow: 0 1px 0 0 #004880 !important;
+}
+.select-wrapper input.select-dropdown:focus {
+  border-bottom: 1px solid #004880 !important;
+}
+input.valid:not([type]),
+input.valid:not([type]):focus,
+input.valid[type="text"]:not(.browser-default),
+input.valid[type="text"]:not(.browser-default):focus,
+input.valid[type="password"]:not(.browser-default),
+input.valid[type="password"]:not(.browser-default):focus,
+input.valid[type="email"]:not(.browser-default),
+input.valid[type="email"]:not(.browser-default):focus,
+input.valid[type="url"]:not(.browser-default),
+input.valid[type="url"]:not(.browser-default):focus,
+input.valid[type="time"]:not(.browser-default),
+input.valid[type="time"]:not(.browser-default):focus,
+input.valid[type="date"]:not(.browser-default),
+input.valid[type="date"]:not(.browser-default):focus,
+input.valid[type="datetime"]:not(.browser-default),
+input.valid[type="datetime"]:not(.browser-default):focus,
+input.valid[type="datetime-local"]:not(.browser-default),
+input.valid[type="datetime-local"]:not(.browser-default):focus,
+input.valid[type="tel"]:not(.browser-default),
+input.valid[type="tel"]:not(.browser-default):focus,
+input.valid[type="number"]:not(.browser-default),
+input.valid[type="number"]:not(.browser-default):focus,
+input.valid[type="search"]:not(.browser-default),
+input.valid[type="search"]:not(.browser-default):focus,
+textarea.materialize-textarea.valid,
+textarea.materialize-textarea.valid:focus,
+.select-wrapper.valid > input.select-dropdown {
+  border-bottom: 1px solid #2196f3 !important;
+  -webkit-box-shadow: 0 1px 0 0 #2196f3 !important;
+  box-shadow: 0 1px 0 0 #2196f3 !important;
+}
+input[type="range"] + .thumb {
+  background-color: #2196f3 !important;
+}
+input[type="range"]::-webkit-slider-thumb {
+  background-color: #004880 !important;
 }

@@ -1,8 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Our team decided to create a random restaurant selector for our first project. We wanted to solve a problem which all of us have encountered in our lives. Where to eat lunch or dinner? When you've worked or lived in an area for an extended period of time, you've probably eaten at a majority of places within your comfort radius. When you just can't decide or want some inspiration, we got you covered. Just type in a cuisine and the distance you are willing to travel and VOILA your future meal awaits!"
+    />
     <!--Link to Materialize CSS-->
     <link
       rel="stylesheet"
@@ -75,7 +79,11 @@
       <!--Row for the text input boxes-->
       <div class="row center-align" id="results">
         <!--Column for entire form-->
-        <form id="userInput" autocomplete="off" onsubmit="submitButton.disabled = true; return true;">
+        <form
+          id="userInput"
+          autocomplete="off"
+          onsubmit="submitButton.disabled = true; return true;"
+        >
           <!--Row for type of cuisine input-->
           <div class="row">
             <div class="col s12">
@@ -106,7 +114,12 @@
               </p>
             </div>
           </div>
-          <button id="submit-icon" name="submitButton" type="submit" class="blue btn">
+          <button
+            id="submit-icon"
+            name="submitButton"
+            type="submit"
+            class="blue btn"
+          >
             Submit
           </button>
         </form>
